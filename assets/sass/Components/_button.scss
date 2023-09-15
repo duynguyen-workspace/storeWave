@@ -1,0 +1,27 @@
+// .phonebtn-white1 {
+//     @include styleButton(
+//         transparent,
+//         $pd-3 + 0.5,
+//         $pd-4,
+//         2px solid $color-blue-2,
+//         $bd-2
+//     );
+
+//     @include styleText($color-blue-2, $fs-1, $fw-2);
+
+//     &:hover {
+//         @include styleButtonHover($color-blue-2, $color-blue-2, $color-white-3);
+//     }
+// }
+
+// .phonebtn-blue1 {
+//     @include styleButton(
+//         linear-gradient(120deg, $color-blue-4, $color-blue-2),
+//         $pd-3 + 2.5,
+//         $pd-4 + 2,
+//         none,
+//         $bd-2
+//     );
+
+//     @include styleText($color-white-3, $fs-1, $fw-2);
+// }

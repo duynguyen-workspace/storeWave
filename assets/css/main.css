@@ -1,0 +1,51 @@
+/*
+! UNUSED FONT SIZE
+$fs-1: 14px;
+$fs-2: 1.1rem;
+$fs-3: 1.8rem;
+$fs-4: 70px;
+$fs-5: 1.6rem;
+$fs-6: 2.25rem;
+$fs-7: 20px;
+$fs-8: 44px;
+*/
+/*
+! UNUSED LETTER SPACING
+$ls-1: 0.015rem;
+$ls-2: 0.03rem;
+*/
+/***
+ *  TODO: configure text style
+ ** @param $color: text color
+ ** @param $fs: text font size
+ ** @param $fw: text font weight
+ */
+/***
+ *  TODO: configure button style
+ ** @param $bg: background color / background image
+ ** @param $pdY: padding top + padding bottom
+ ** @param $pdX: padding left + padding right
+ ** @param $border: border width, border style, border color
+ ** @param $radius: border radius
+ */
+/***
+ *  TODO: configure button style
+ ** @param $bg: background color / background image
+ ** @param $pdY: padding top + padding bottom
+ ** @param $pdX: padding left + padding right
+ ** @param $border: border width, border style, border color
+ ** @param $radius: border radius
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Nunito Sans", sans-serif;
+  color: #a9adb1;
+  font-size: 16px;
+  font-weight: 300;
+  background-color: #fff;
+}/*# sourceMappingURL=main.css.map */

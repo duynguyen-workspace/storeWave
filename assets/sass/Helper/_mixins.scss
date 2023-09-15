@@ -1,0 +1,47 @@
+/***
+ *  TODO: configure text style
+ ** @param $color: text color
+ ** @param $fs: text font size
+ ** @param $fw: text font weight
+ */
+@mixin styleText($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+/***
+ *  TODO: configure button style
+ ** @param $bg: background color / background image
+ ** @param $pdY: padding top + padding bottom
+ ** @param $pdX: padding left + padding right
+ ** @param $border: border width, border style, border color
+ ** @param $radius: border radius
+ */
+@mixin styleButton($bg, $pdY, $pdX, $border, $radius) {
+    background: $bg;
+    padding: $pdY $pdX;
+    border: $border;
+    border-radius: $radius;
+    transition: all 0.5s;
+}
+
+/***
+ *  TODO: configure button style
+ ** @param $bg: background color / background image
+ ** @param $pdY: padding top + padding bottom
+ ** @param $pdX: padding left + padding right
+ ** @param $border: border width, border style, border color
+ ** @param $radius: border radius
+ */
+@mixin resposive($screen){
+    @if(map-has-key($map: $breakpoints, $key: $screen)){
+        //tìm thấy màn hình
+        $value: map-get($map: $breakpoints, $key: $screen);
+        //CSS3
+        @media screen and (max-width:$value){
+            @content;
+        }
+    }
+    // @warn("Man hinh khong tim thay")
+}
