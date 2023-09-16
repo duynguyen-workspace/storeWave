@@ -1,0 +1,1 @@
+const BASE_URL = "https://650561a2ef808d3c66eff95e.mockapi.io/products"
