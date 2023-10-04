@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!--* Font Awesome CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../assets/css/admin.css">
+
+
+    <style>
+        #spinner{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: black;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+  </head>
+  <body>
+
+    <div id="spinner">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+    </div>
+
+    <header>
+      <div class="container">
+          <div class="header__content row p-4">
+              <div class="col-6">
+                  <a href="/" aria-current="page" aria-label="home" class="d-inline-block">
+                      <div class="image">
+                          <img src="https://assets.website-files.com/62f51a90d298e6f454bbffca/630d30dc9ad89c4a3aad5921_storewave-x-webflow-template-logo.svg" alt="" class="header__logo">
+                      </div>
+                  </a>
+                  <a href="/" class="d-inline-block">
+                      <div class="icon">
+                          <i class="fa-solid fa-house text-align-center"></i>
+                      </div>
+                      <div class="text">
+                          Home
+                      </div>
+                  </a>
+                  <a href="/" class="d-inline-block pl-4">
+                      <div class="icon">
+                          <i class="fa-solid fa-store"></i>
+                      </div>
+                      <div class="text">
+                          Store
+                      </div>
+                  </a>
+              </div>
+              <div class="col-6">
+                  <a href="/" class="d-inline-block pl-4">
+                    <div class="">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="text">Cart</div>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </header>
+
+
+
+  <div class="container p-4">
+    <div class="card text-center">
+        <div class="card-header myCardHeader">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="text-left text-primary font-weight-bold">Product Managerment</h3>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button class="btn btn-primary" id="btnThem" data-toggle="modal"
+                        data-target="#myModal">Add product</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Loại sản phẩm" id="searchName">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="btnSP" onclick="findProducts()"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <button onclick="SapXepNhoDenLon()" class="btn btn-primary">Sắp xếp từ bé đến lớn</button>
+                    <button onclick="SapXepLonDenNho()" class="btn btn-primary">Sắp xếp từ lớn đến bé</button>
+                </div>
+            </div>
+            <table class="table table-bordered table-hover myTable">
+                <thead class="text-primary">
+                    <tr>
+                        <th class="nowrap">ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Screen</th>
+                        <th>Back Camera</th>
+                        <th>Front Camera</th>									
+                        <th>Photo</th>
+                        <th>Decs</th>
+                        <th>Type</th>
+                        <th><em class="fa fa-cog"></em></th>
+                    </tr>
+                </thead>
+                <tbody id="productlist">
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer myCardFooter">
+            <nav>
+                <ul class="pagination justify-content-center" id="ulPhanTrang">
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+  <footer>
+    <div class="container p-4">
+        <div class="footer__top">
+            <div class="">Contact us:</div>
+            <div class="social">
+                <a href="https://facebook.com/" target="_blank" class="footer__icon white w-inline-block">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" class="footer__icon white w-inline-block">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="footer__icon white w-inline-block">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" class="footer__icon white w-inline-block">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.youtube.com/" target="_blank" class="footer__icon white w-inline-block">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.whatsapp.com/" target="_blank" class="footer__icon white w-inline-block">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+            </div>
+        </div>
+        <div class="footer__menu"></div>
+    </div>
+  </footer>
+      
+
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <header class="head-form mb-0">
+                <h2 id="header-title">Thêm sản phẩm</h2>
+            </header>
+            <div class="modal-body">
+                <form role="form" class="text-dark">
+                    <div class="form-group">
+                        <span>ID của sản phẩm</span>
+                        <div class="input-group">
+                            <input type="text" id="idSP" class="form-control input-sm"
+                                placeholder="ID sản phẩm" readonly>
+                        </div>
+                        <span class="sp-thongbao text-danger" id="tbsp"></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Tên của sản phẩm</span>
+                        <div class="input-group">
+                            <input type="text" id="idnameSP" class="form-control input-sm"
+                                placeholder="Tên sản phẩm">
+                        </div>
+                        <span class="sp-thongbao text-danger" id="tbname"></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Giá của sản phẩm</span>
+                        <div class="input-group">
+                            <input type="text" id="idpriceSP" class="form-control input-sm"
+                                placeholder="Giá của sản phẩm">
+                        </div>
+                        <span class="sp-thongbao text-danger" id="tbprice"></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Screen</span>
+                        <div class="input-group">
+                            <input type="text" id="idscreenSP" class="form-control input-sm"
+                                placeholder="Screen">
+                        </div>
+                        <span class="sp-thongbao text-danger" id="tbscreenn"></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Back Camera</span>
+                        <div class="input-group">
+                            <input type="text" id="idBCSP" class="form-control input-sm"
+                                placeholder="Back Camera">
+                        </div>
+                        <span class="sp-thongbao text-danger" id="tbBC"></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Front Camera</span>
+                        <div class="input-group">
+                            <input type="text" id="idFCSP" class="form-control"
+                                placeholder="Front Camera">
+                        </div>
+                        <span class="sp-thongbao text-danger" id="tbFC"></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Hình ảnh</span>
+                        <div class="input-group">
+                            <input type="text" id="idimgSP" class="form-control input-sm"
+                                placeholder="Hình ảnh">
+                        </div>
+                        <span class="sp-thongbao text-danger" id="tbimg"></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Desc</span>
+                        <div class="input-group">
+                            <input type="text" id="iddescSP" class="form-control"
+                                placeholder="Desc">
+                        </div>
+                        <span class="sp-thongbao text-danger" id="tbdesc"></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Type</span>
+                        <div class="input-group">
+                            <input type="text" id="idtypeSP" class="form-control input-sm"
+                                placeholder="Thể loại">
+                        </div>
+                        <span class="sp-thongbao text-danger" id="idtype"></span>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer" id="modal-footer">
+                <button id="btnThemsp" type="button" class="btn btn-success" onclick="AddProducts()">Thêm sản phẩm</button>
+                <button id="btnCapNhat" type="button" class="btn btn-success" onclick="UpdateProducts()">Cập nhật</button>
+                <button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"
+        integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="../admin/until/validation.js"></script>    
+    <script src="../admin/services.js/services.js"></script>
+    <script src="../admin/controllers/controllers.js"></script>
+    <script src="../admin/models/product.js"></script>
+    <script src="../admin/main.js"></script>
+  </body>
+</html>

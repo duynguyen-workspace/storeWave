@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Nunito Sans", sans-serif;
+    color: #a9adb1;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: #fff;
+}
+
+header{
+    background-color: #20283f;
+    color: white;
+}
+
+.header__content a{
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 50px;
+    color: white;
+}
+
+.header__content a:hover{
+    color: #0085ff;
+}
+
+footer{
+    background-color: #20283f;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+ 
+.footer__top a{
+    line-height: 10px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.footer__top a:hover{
+    color: #0085ff;
+}
+
